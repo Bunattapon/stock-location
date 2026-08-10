@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="th">
 
 <head>
@@ -10,9 +11,15 @@
     content="width=device-width, initial-scale=1"
   >
 
-  <title>Stock Location</title>
+  <title>
+    Stock Location
+  </title>
 
-  <script src="https://unpkg.com/html5-qrcode"></script>
+
+  <script
+    src="https://unpkg.com/html5-qrcode">
+  </script>
+
 
   <style>
 
@@ -20,191 +27,481 @@
       box-sizing: border-box;
     }
 
+
     body {
+
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f4f6;
-      color: #1f2937;
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      background:
+        #f3f4f6;
+
+      color:
+        #1f2937;
+
     }
+
 
     .container {
-      max-width: 650px;
-      margin: auto;
-      padding: 14px;
+
+      max-width:
+        650px;
+
+      margin:
+        auto;
+
+      padding:
+        14px;
+
     }
+
 
     .header {
-      background: #14532d;
-      color: white;
-      padding: 20px;
-      border-radius: 16px;
-      margin-bottom: 14px;
+
+      background:
+        #14532d;
+
+      color:
+        white;
+
+      padding:
+        20px;
+
+      border-radius:
+        16px;
+
+      margin-bottom:
+        14px;
+
     }
+
 
     .header h1 {
-      margin: 0;
-      font-size: 23px;
+
+      margin:
+        0;
+
+      font-size:
+        23px;
+
     }
+
 
     .header p {
-      margin: 6px 0 0;
-      opacity: .9;
-      font-size: 14px;
+
+      margin:
+        7px 0 0;
+
+      opacity:
+        .9;
+
+      font-size:
+        14px;
+
     }
+
 
     .search-box {
-      background: white;
-      padding: 15px;
-      border-radius: 16px;
-      margin-bottom: 14px;
+
+      background:
+        white;
+
+      padding:
+        15px;
+
+      border-radius:
+        16px;
+
+      margin-bottom:
+        14px;
+
+      box-shadow:
+        0 2px 8px rgba(0,0,0,.05);
+
     }
+
 
     .input-row {
-      display: flex;
-      gap: 8px;
+
+      display:
+        flex;
+
+      gap:
+        8px;
+
     }
+
 
     #searchInput {
-      flex: 1;
-      min-width: 0;
-      height: 50px;
-      border: 1px solid #d1d5db;
-      border-radius: 11px;
-      padding: 0 13px;
-      font-size: 17px;
+
+      flex:
+        1;
+
+      min-width:
+        0;
+
+      height:
+        50px;
+
+      border:
+        1px solid #d1d5db;
+
+      border-radius:
+        11px;
+
+      padding:
+        0 13px;
+
+      font-size:
+        17px;
+
+      outline:
+        none;
+
     }
+
+
+    #searchInput:focus {
+
+      border-color:
+        #15803d;
+
+    }
+
 
     .btn-search {
-      height: 50px;
-      border: 0;
-      border-radius: 11px;
-      padding: 0 18px;
-      background: #15803d;
-      color: white;
-      font-weight: bold;
-      font-size: 16px;
+
+      height:
+        50px;
+
+      border:
+        0;
+
+      border-radius:
+        11px;
+
+      padding:
+        0 18px;
+
+      background:
+        #15803d;
+
+      color:
+        white;
+
+      font-weight:
+        bold;
+
+      font-size:
+        16px;
+
     }
+
 
     .btn-scan {
-      width: 100%;
-      height: 54px;
-      margin-top: 10px;
-      border: 0;
-      border-radius: 11px;
-      background: #111827;
-      color: white;
-      font-size: 17px;
-      font-weight: bold;
+
+      width:
+        100%;
+
+      height:
+        54px;
+
+      margin-top:
+        10px;
+
+      border:
+        0;
+
+      border-radius:
+        11px;
+
+      background:
+        #111827;
+
+      color:
+        white;
+
+      font-size:
+        17px;
+
+      font-weight:
+        bold;
+
     }
+
 
     #reader {
-      display: none;
-      margin-top: 12px;
-      border-radius: 12px;
-      overflow: hidden;
+
+      display:
+        none;
+
+      margin-top:
+        12px;
+
+      border-radius:
+        12px;
+
+      overflow:
+        hidden;
+
     }
+
 
     .summary {
-      display: none;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 14px;
+
+      display:
+        none;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:
+        10px;
+
+      margin-bottom:
+        14px;
+
     }
+
 
     .summary-card {
-      background: white;
-      border-radius: 14px;
-      padding: 14px;
-      text-align: center;
+
+      background:
+        white;
+
+      border-radius:
+        14px;
+
+      padding:
+        14px;
+
+      text-align:
+        center;
+
     }
+
 
     .summary-title {
-      color: #6b7280;
-      font-size: 11px;
+
+      color:
+        #6b7280;
+
+      font-size:
+        11px;
+
     }
+
 
     .summary-value {
-      margin-top: 4px;
-      font-size: 25px;
-      font-weight: bold;
-      color: #166534;
+
+      margin-top:
+        4px;
+
+      font-size:
+        25px;
+
+      font-weight:
+        bold;
+
+      color:
+        #166534;
+
     }
+
 
     .result-card {
-      background: white;
-      border-radius: 15px;
-      padding: 15px;
-      margin-bottom: 11px;
-      border-left: 5px solid #16a34a;
+
+      background:
+        white;
+
+      border-radius:
+        15px;
+
+      padding:
+        15px;
+
+      margin-bottom:
+        11px;
+
+      border-left:
+        5px solid #16a34a;
+
+      box-shadow:
+        0 2px 7px rgba(0,0,0,.05);
+
     }
+
 
     .segment {
-      color: #166534;
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 5px;
+
+      color:
+        #166534;
+
+      font-size:
+        14px;
+
+      font-weight:
+        bold;
+
+      margin-bottom:
+        5px;
+
     }
+
 
     .description {
-      font-size: 17px;
-      font-weight: bold;
-      margin-bottom: 13px;
+
+      font-size:
+        17px;
+
+      font-weight:
+        bold;
+
+      margin-bottom:
+        13px;
+
+      line-height:
+        1.35;
+
     }
+
 
     .detail-grid {
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      row-gap: 8px;
-      font-size: 14px;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        90px 1fr;
+
+      row-gap:
+        8px;
+
+      font-size:
+        14px;
+
     }
+
 
     .label {
-      color: #6b7280;
+
+      color:
+        #6b7280;
+
     }
+
 
     .value {
-      font-weight: 600;
-      word-break: break-word;
+
+      font-weight:
+        600;
+
+      word-break:
+        break-word;
+
     }
+
 
     .location-box {
-      margin-top: 14px;
-      background: #ecfdf5;
-      border-radius: 11px;
-      padding: 13px;
-      text-align: center;
+
+      margin-top:
+        14px;
+
+      background:
+        #ecfdf5;
+
+      border-radius:
+        11px;
+
+      padding:
+        13px;
+
+      text-align:
+        center;
+
     }
+
 
     .location-label {
-      color: #6b7280;
-      font-size: 11px;
+
+      color:
+        #6b7280;
+
+      font-size:
+        11px;
+
     }
+
 
     .location-value {
-      margin-top: 3px;
-      color: #166534;
-      font-size: 25px;
-      font-weight: bold;
+
+      margin-top:
+        3px;
+
+      color:
+        #166534;
+
+      font-size:
+        25px;
+
+      font-weight:
+        bold;
+
     }
 
+
     .message {
-      text-align: center;
-      color: #6b7280;
-      padding: 28px 15px;
-      line-height: 1.6;
+
+      text-align:
+        center;
+
+      color:
+        #6b7280;
+
+      padding:
+        28px 15px;
+
+      line-height:
+        1.6;
+
     }
+
+
+    .error {
+
+      color:
+        #b91c1c;
+
+    }
+
+
+    .success {
+
+      color:
+        #166534;
+
+    }
+
 
   </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
+
   <div class="header">
 
-    <h1>📦 Stock Location</h1>
+    <h1>
+      📦 Stock Location
+    </h1>
 
     <p>
       Barcode • Article • Pallet
@@ -213,150 +510,282 @@
   </div>
 
 
+
   <div class="search-box">
+
 
     <div class="input-row">
 
+
       <input
+
         id="searchInput"
+
         type="text"
+
         placeholder="Barcode / Article / Pallet"
+
         autocomplete="off"
+
+        autocapitalize="off"
+
+        spellcheck="false"
+
       >
 
+
       <button
+
         class="btn-search"
+
         onclick="searchStock()"
+
       >
+
         Search
+
       </button>
+
 
     </div>
 
 
+
     <button
-      class="btn-scan"
+
       id="scanButton"
+
+      class="btn-scan"
+
       onclick="toggleScanner()"
+
     >
+
       📷 Scan Barcode
+
     </button>
+
 
 
     <div id="reader"></div>
 
+
   </div>
+
 
 
   <div
+
     id="summary"
+
     class="summary"
+
   >
 
+
     <div class="summary-card">
 
       <div class="summary-title">
+
         LOCATION / PALLET
+
       </div>
 
+
       <div
+
         id="totalRecords"
+
         class="summary-value"
+
       >
+
         0
+
       </div>
 
     </div>
+
 
 
     <div class="summary-card">
 
       <div class="summary-title">
+
         TOTAL SKU
+
       </div>
 
+
       <div
+
         id="totalSku"
+
         class="summary-value"
+
       >
+
         0
+
       </div>
 
     </div>
+
 
   </div>
+
 
 
   <div id="results">
 
     <div class="message">
-      สแกนหรือกรอก Barcode / Article / Pallet
+
+      สแกนหรือกรอก
+      Barcode / Article / Pallet
+
     </div>
 
   </div>
 
+
 </div>
+
 
 
 <script>
 
+
 /*
-  สำคัญมาก:
-  เปลี่ยน URL ด้านล่างเป็น Apps Script /exec ของคุณ
+==========================================================
+ IMPORTANT
+
+ ใส่ Apps Script Web App URL /exec ของคุณตรงนี้
+==========================================================
 */
 
+
 const API_URL =
-  'https://script.google.com/macros/s/AKfycbxXwQbnjyfjjYT5D1R6ddcgLBY79_s2yjBIHgCXLl71jZSeG-Mp3g3h250mv-nBACR-/exec';
+  'https://script.google.com/macros/s/AKfycbw7FGz7rnIG9udMp4a6qQxhe8PXEEVkhEwT8_vPEB5LRz2ZD9SF9hEMqbOs6J3aDcnv/exec';
 
 
-let scanner = null;
-let scannerRunning = false;
-let scanLocked = false;
+
+/*
+==========================================================
+ VARIABLES
+==========================================================
+*/
 
 
-/* Enter Search */
+let scanner =
+  null;
+
+
+let scannerRunning =
+  false;
+
+
+let scanLocked =
+  false;
+
+
+let jsonpCounter =
+  0;
+
+
+
+/*
+==========================================================
+ ENTER SEARCH
+==========================================================
+*/
+
 
 document
-  .getElementById('searchInput')
+  .getElementById(
+    'searchInput'
+  )
   .addEventListener(
+
     'keydown',
+
     function(event) {
 
-      if (event.key === 'Enter') {
+
+      if (
+        event.key === 'Enter'
+      ) {
+
+
         searchStock();
+
+
       }
 
+
     }
+
   );
 
 
-/* Search */
 
-async function searchStock(value) {
+/*
+==========================================================
+ SEARCH
+==========================================================
+*/
+
+
+function searchStock(value) {
+
 
   const input =
+
     String(
+
       value ||
+
       document
-        .getElementById('searchInput')
+        .getElementById(
+          'searchInput'
+        )
         .value
+
     ).trim();
+
 
 
   if (!input) {
 
+
     showMessage(
+
       'กรุณากรอก Barcode / Article / Pallet'
+
     );
+
 
     return;
 
   }
 
 
+
   document
-    .getElementById('searchInput')
-    .value = input;
+    .getElementById(
+      'searchInput'
+    )
+    .value =
+    input;
+
+
+
+  document
+    .getElementById(
+      'summary'
+    )
+    .style.display =
+    'none';
+
 
 
   showMessage(
@@ -364,70 +793,317 @@ async function searchStock(value) {
   );
 
 
-  try {
 
-    const url =
-      API_URL +
-      '?q=' +
-      encodeURIComponent(input);
-
-
-    const response =
-      await fetch(url);
+  /*
+   * JSONP
+   */
+  jsonpRequest(
+    input
+  );
 
 
-    const data =
-      await response.json();
-
-
-    showResults(data);
-
-
-  } catch (error) {
-
-    console.error(error);
-
-    showMessage(
-      '❌ ไม่สามารถเชื่อมต่อระบบค้นหาได้'
-    );
-
-  }
 
 }
 
 
-/* Scanner */
+
+/*
+==========================================================
+ JSONP
+==========================================================
+*/
+
+
+function jsonpRequest(searchText) {
+
+
+  jsonpCounter++;
+
+
+  const callbackName =
+
+    'stockCallback_' +
+
+    Date.now() +
+
+    '_' +
+
+    jsonpCounter;
+
+
+
+  /*
+   * Timeout
+   */
+  let completed =
+    false;
+
+
+
+  const timeout =
+    setTimeout(
+
+      function() {
+
+
+        if (completed) {
+          return;
+        }
+
+
+        completed =
+          true;
+
+
+        cleanupJsonp(
+          callbackName
+        );
+
+
+        showMessage(
+
+          '<span class="error">' +
+
+          '❌ การเชื่อมต่อใช้เวลานานเกินไป' +
+
+          '</span>'
+
+        );
+
+
+      },
+
+      15000
+
+    );
+
+
+
+  /*
+   * Global callback
+   */
+  window[callbackName] =
+    function(response) {
+
+
+      if (completed) {
+        return;
+      }
+
+
+      completed =
+        true;
+
+
+      clearTimeout(
+        timeout
+      );
+
+
+      cleanupJsonp(
+        callbackName
+      );
+
+
+      showResults(
+        response
+      );
+
+
+    };
+
+
+
+  /*
+   * Create script
+   */
+  const script =
+    document.createElement(
+      'script'
+    );
+
+
+  script.id =
+    callbackName;
+
+
+
+  script.onerror =
+    function() {
+
+
+      if (completed) {
+        return;
+      }
+
+
+      completed =
+        true;
+
+
+      clearTimeout(
+        timeout
+      );
+
+
+      cleanupJsonp(
+        callbackName
+      );
+
+
+      showMessage(
+
+        '<span class="error">' +
+
+        '❌ ไม่สามารถเชื่อมต่อระบบค้นหาได้' +
+
+        '</span>'
+
+      );
+
+
+    };
+
+
+
+  /*
+   * Cache bust
+   */
+  const timestamp =
+    Date.now();
+
+
+
+  script.src =
+
+    API_URL +
+
+    '?q=' +
+
+    encodeURIComponent(
+      searchText
+    ) +
+
+    '&callback=' +
+
+    encodeURIComponent(
+      callbackName
+    ) +
+
+    '&_=' +
+
+    timestamp;
+
+
+
+  document.body.appendChild(
+    script
+  );
+
+
+}
+
+
+
+/*
+==========================================================
+ CLEAN JSONP
+==========================================================
+*/
+
+
+function cleanupJsonp(
+  callbackName
+) {
+
+
+  const script =
+    document.getElementById(
+      callbackName
+    );
+
+
+  if (script) {
+
+    script.remove();
+
+  }
+
+
+  try {
+
+    delete window[
+      callbackName
+    ];
+
+  } catch(e) {
+
+
+    window[
+      callbackName
+    ] =
+      undefined;
+
+
+  }
+
+
+}
+
+
+
+/*
+==========================================================
+ SCANNER
+==========================================================
+*/
+
 
 async function toggleScanner() {
 
+
   if (scannerRunning) {
 
+
     await stopScanner();
+
 
     return;
 
   }
 
 
-  scanLocked = false;
+
+  scanLocked =
+    false;
+
 
 
   const reader =
-    document.getElementById('reader');
+    document.getElementById(
+      'reader'
+    );
 
 
   reader.style.display =
     'block';
 
 
+
   scanner =
-    new Html5Qrcode('reader');
+    new Html5Qrcode(
+      'reader'
+    );
+
 
 
   try {
 
+
     const cameras =
-      await Html5Qrcode.getCameras();
+      await Html5Qrcode
+        .getCameras();
+
 
 
     if (
@@ -435,134 +1111,228 @@ async function toggleScanner() {
       cameras.length === 0
     ) {
 
+
       throw new Error(
         'Camera not found'
       );
 
+
     }
 
 
+
+    /*
+     * เลือกกล้องหลัง
+     */
     let cameraId =
-      cameras[cameras.length - 1].id;
+      cameras[
+        cameras.length - 1
+      ].id;
 
 
-    for (const cam of cameras) {
+
+    for (
+      const camera
+      of cameras
+    ) {
+
 
       const label =
+
         String(
-          cam.label || ''
+          camera.label || ''
         ).toLowerCase();
 
 
+
       if (
-        label.includes('back') ||
-        label.includes('rear')
+
+        label.includes(
+          'back'
+        ) ||
+
+        label.includes(
+          'rear'
+        ) ||
+
+        label.includes(
+          'environment'
+        )
+
       ) {
 
+
         cameraId =
-          cam.id;
+          camera.id;
+
 
         break;
 
+
       }
 
+
     }
+
 
 
     const config = {
 
-      fps: 15,
 
-      qrbox: function(
-        width,
-        height
-      ) {
+      fps:
+        20,
 
-        return {
 
-          width:
-            Math.floor(
-              width * .88
-            ),
+      qrbox:
+        function(
+          width,
+          height
+        ) {
 
-          height:
-            130
 
-        };
+          return {
 
-      },
+
+            width:
+              Math.floor(
+                width * .90
+              ),
+
+
+            height:
+              130
+
+
+          };
+
+
+        },
+
 
       aspectRatio:
         1.7777778,
 
+
       formatsToSupport: [
 
-        Html5QrcodeSupportedFormats.EAN_13,
 
-        Html5QrcodeSupportedFormats.CODE_128,
+        Html5QrcodeSupportedFormats
+          .EAN_13,
 
-        Html5QrcodeSupportedFormats.CODE_39,
 
-        Html5QrcodeSupportedFormats.UPC_A,
+        Html5QrcodeSupportedFormats
+          .CODE_128,
 
-        Html5QrcodeSupportedFormats.EAN_8
+
+        Html5QrcodeSupportedFormats
+          .CODE_39,
+
+
+        Html5QrcodeSupportedFormats
+          .UPC_A,
+
+
+        Html5QrcodeSupportedFormats
+          .EAN_8
+
 
       ]
+
 
     };
 
 
+
     await scanner.start(
+
 
       cameraId,
 
+
       config,
+
 
       onScanSuccess,
 
+
       function() {}
 
+
     );
+
 
 
     scannerRunning =
       true;
 
 
+
     document
-      .getElementById('scanButton')
+      .getElementById(
+        'scanButton'
+      )
       .innerText =
       '✖ ปิดกล้อง';
 
 
+
   } catch(error) {
 
-    console.error(error);
+
+    console.error(
+      error
+    );
+
 
     await stopScanner();
 
+
     showMessage(
-      '❌ เปิดกล้องไม่ได้ กรุณาตรวจสอบ Camera Permission'
+
+      '<span class="error">' +
+
+      '❌ เปิดกล้องไม่ได้' +
+
+      '</span>' +
+
+      '<br><br>' +
+
+      'กรุณาตรวจสอบ Camera Permission'
+
     );
 
+
   }
+
 
 }
 
 
-/* Scan success */
+
+/*
+==========================================================
+ SCAN SUCCESS
+==========================================================
+*/
+
 
 async function onScanSuccess(
   decodedText
 ) {
 
-  if (scanLocked) {
+
+  if (
+    scanLocked
+  ) {
+
     return;
+
   }
 
 
   scanLocked =
     true;
+
 
 
   const barcode =
@@ -571,47 +1341,70 @@ async function onScanSuccess(
     ).trim();
 
 
+
   document
-    .getElementById('searchInput')
+    .getElementById(
+      'searchInput'
+    )
     .value =
     barcode;
 
 
-  if (navigator.vibrate) {
+
+  if (
+    navigator.vibrate
+  ) {
+
 
     navigator.vibrate(
       80
     );
 
+
   }
 
 
+
   await stopScanner();
+
 
 
   searchStock(
     barcode
   );
 
+
 }
 
 
-/* Stop Scanner */
+
+/*
+==========================================================
+ STOP SCANNER
+==========================================================
+*/
+
 
 async function stopScanner() {
 
+
   try {
+
 
     if (
       scanner &&
       scannerRunning
     ) {
 
+
       await scanner.stop();
+
 
       scanner.clear();
 
+
     }
+
 
   } catch(e) {}
 
@@ -620,191 +1413,372 @@ async function stopScanner() {
     false;
 
 
+
   document
-    .getElementById('reader')
+    .getElementById(
+      'reader'
+    )
     .style.display =
     'none';
 
 
+
   document
-    .getElementById('scanButton')
+    .getElementById(
+      'scanButton'
+    )
     .innerText =
     '📷 Scan Barcode';
+
 
 }
 
 
-/* Results */
 
-function showResults(response) {
+/*
+==========================================================
+ SHOW RESULT
+==========================================================
+*/
 
-  if (!response.success) {
+
+function showResults(
+  response
+) {
+
+
+  if (
+    !response
+  ) {
+
 
     showMessage(
-      response.message
+
+      '<span class="error">' +
+
+      '❌ ไม่ได้รับข้อมูลจากระบบ' +
+
+      '</span>'
+
     );
+
 
     return;
 
   }
 
 
-  if (!response.found) {
+
+  if (
+    !response.success
+  ) {
+
+
+    showMessage(
+
+      '<span class="error">' +
+
+      '❌ ' +
+
+      escapeHtml(
+        response.message ||
+        'เกิดข้อผิดพลาด'
+      ) +
+
+      '</span>'
+
+    );
+
+
+    return;
+
+  }
+
+
+
+  if (
+    !response.found
+  ) {
+
 
     document
-      .getElementById('summary')
+      .getElementById(
+        'summary'
+      )
       .style.display =
       'none';
 
 
+
     showMessage(
-      '❌ ไม่พบข้อมูล<br><br><strong>' +
+
+      '❌ ไม่พบข้อมูล' +
+
+      '<br><br>' +
+
+      '<strong>' +
+
       escapeHtml(
         response.searchText
       ) +
+
       '</strong>'
+
     );
+
 
     return;
 
   }
 
 
+
   document
-    .getElementById('summary')
+    .getElementById(
+      'summary'
+    )
     .style.display =
     'grid';
 
 
+
   document
-    .getElementById('totalRecords')
+    .getElementById(
+      'totalRecords'
+    )
     .innerText =
     response.totalRecords;
 
 
+
   document
-    .getElementById('totalSku')
+    .getElementById(
+      'totalSku'
+    )
     .innerText =
+
     Number(
       response.totalSku
     ).toLocaleString();
 
 
-  let html = '';
+
+  let html =
+    '';
+
 
 
   response.data.forEach(
+
     function(item) {
+
 
       html += `
 
+
         <div class="result-card">
 
+
           <div class="segment">
-            ${escapeHtml(item.segment)}
+
+            ${escapeHtml(
+              item.segment
+            )}
+
           </div>
+
+
 
           <div class="description">
-            ${escapeHtml(item.description)}
+
+            ${escapeHtml(
+              item.description
+            )}
+
           </div>
 
+
+
           <div class="detail-grid">
+
 
             <div class="label">
               Barcode
             </div>
 
+
             <div class="value">
-              ${escapeHtml(item.barcode)}
+              ${escapeHtml(
+                item.barcode
+              )}
             </div>
+
+
 
             <div class="label">
               Article
             </div>
 
+
             <div class="value">
-              ${escapeHtml(item.article)}
+              ${escapeHtml(
+                item.article
+              )}
             </div>
+
+
 
             <div class="label">
               SKU
             </div>
 
+
             <div class="value">
-              ${escapeHtml(item.sku)}
+              ${escapeHtml(
+                item.sku
+              )}
             </div>
+
+
 
             <div class="label">
               Pallet
             </div>
 
+
             <div class="value">
-              ${escapeHtml(item.pallet)}
+              ${escapeHtml(
+                item.pallet
+              )}
             </div>
 
+
           </div>
+
 
 
           <div class="location-box">
 
+
             <div class="location-label">
+
               LOCATION
+
             </div>
 
+
             <div class="location-value">
-              ${escapeHtml(item.location)}
+
+              ${escapeHtml(
+                item.location
+              )}
+
             </div>
+
 
           </div>
 
+
         </div>
+
 
       `;
 
+
     }
+
   );
 
 
+
   document
-    .getElementById('results')
+    .getElementById(
+      'results'
+    )
     .innerHTML =
     html;
 
+
 }
 
 
-/* Message */
 
-function showMessage(message) {
+/*
+==========================================================
+ MESSAGE
+==========================================================
+*/
+
+
+function showMessage(
+  message
+) {
+
 
   document
-    .getElementById('results')
+    .getElementById(
+      'results'
+    )
     .innerHTML =
 
     '<div class="message">' +
+
     message +
+
     '</div>';
+
 
 }
 
 
-/* Security */
 
-function escapeHtml(value) {
+/*
+==========================================================
+ SECURITY
+==========================================================
+*/
+
+
+function escapeHtml(
+  value
+) {
+
 
   return String(
     value || ''
   )
 
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+    .replace(
+      /&/g,
+      '&amp;'
+    )
+
+    .replace(
+      /</g,
+      '&lt;'
+    )
+
+    .replace(
+      />/g,
+      '&gt;'
+    )
+
+    .replace(
+      /"/g,
+      '&quot;'
+    )
+
+    .replace(
+      /'/g,
+      '&#039;'
+    );
+
 
 }
 
+
 </script>
+
 
 </body>
 
